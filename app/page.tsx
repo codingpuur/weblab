@@ -1,109 +1,46 @@
-"use client"
 import Image from "next/image";
 import Navbar from "@/components/navbar/Navbar";
 import heroImage from "@/public/assest/hero.jpeg";
 import servicesImage from "@/public/assest/services.jpeg";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import logo from "@/app/favicon.ico";
-import Autoplay from 'embla-carousel-autoplay'
 
+import logo from "@/app/favicon.ico";
 
 import { useEffect } from "react";
+import Status from "@/components/Status";
 
 export default function Home() {
-
-
-
-
- 
-
   return (
     <main className="flex gap-10 min-h-screen flex-col items-center  px-5 lg:px-24 pt-2">
       <Navbar />
 
-      <div className=" flex gap-5 h-full  relative flex-col md:flex-row ">
-    
-   
-       
-         
-          <div className="    top-0  flex  flex-col h-full  text-[3rem]   lg:text-[7rem]   font-bold    leading-none uppercase">
-          <video src="https://d3vlq52qrgdnc2.cloudfront.net/Services-Showreel-1080.mp4" className=" object-cover rounded-2xl  w-full h-full"   autoPlay loop muted />
-        
-        
-         
+      <div className=" flex gap-5 lg:h-[34rem] relative flex-col lg:flex-row  ">
+        <div className="    top-0  flex  flex-col h-full   text-[3rem]   lg:text-[7rem]   font-bold    leading-none uppercase">
+          <video
+            src="https://d3vlq52qrgdnc2.cloudfront.net/Services-Showreel-1080.mp4"
+            className=" object-cover rounded-2xl  w-full h-full"
+            autoPlay
+            loop
+            muted
+          />
         </div>
-        <div>
-          <div className=" bg-white/10 h-full rounded-3xl  w-full md:w-[24rem] p-5">
-            <div className=" flex  justify-between items-center">
-              <div className=" flex justify-center items-center gap-2 ">
-                <div>
-                  <Image
-                    className=" h-8 w-8"
-                    src={logo}
-                    alt="Next.js Logo"
-                    priority
-                  />
-                </div>
-
-                <h1 className="text-sm font-bold leading-tight text-gray-900 dark:text-gray-300 uppercase ">
-                  weblab
-                </h1>
-              </div>
-              <div>dot</div>
-            </div>
-            <p className="mt-3 max-w-3xl text-lg leading-6 text-gray-500 dark:text-gray-400">
-              Next.js is a JavaScript framework for building single-page
-              applications (SPAs).
-            </p>
-            <div>
-            <Carousel
-             plugins={[
-              Autoplay({
-                delay: 5000,
-              }),
-            ]}
-            
-            >
-  <CarouselContent>
-    <CarouselItem>
-      <Image
-        src={heroImage}
-        alt="Next.js Logo"
-        priority
-      />
-    </CarouselItem>
-    <CarouselItem>
-      <Image
-        src={heroImage}
-        alt="Next.js Logo"
-        priority
-      />
-    </CarouselItem>
-    <CarouselItem>
-      <Image
-        src={heroImage}
-        alt="Next.js Logo"
-        priority
-      />
-    </CarouselItem>
-   
-  </CarouselContent>
- 
-  <CarouselNext />
-</Carousel>
-            </div>
-          </div>
+        <div className=" hidden lg:block">
+          <Status />
         </div>
       </div>
+<div  className=" flex  flex-col md:flex-row w-full gap-5">
+<div className=" lg:hidden">
+<Status />
+</div>
 
 
-
+      <div className=" grid grid-cols-2 lg:grid-cols-3 gap-5  w-full text-center">
+        <div className=" bg-[#3C0753] rounded-2xl  col-span-2 lg:col-span-1 " >research</div>
+        <div className=" bg-[#3C0753] rounded-2xl" >degine</div>
+        <div className=" bg-[#3C0753] rounded-2xl" >devlopment</div>
+       
+      </div>
+</div>
+     
 
       {/* <div className="services relative h-fit">
          <Image src={servicesImage} alt="services image"/>
