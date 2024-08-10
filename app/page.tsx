@@ -7,6 +7,7 @@ import logo from "@/app/favicon.ico";
 
 import { useEffect } from "react";
 import Status from "@/components/Status";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -33,12 +34,20 @@ export default function Home() {
 </div>
 
 
-      <div className=" grid grid-cols-2 lg:grid-cols-3 gap-5  w-full text-center">
-        <div className=" bg-[#3C0753] rounded-2xl  col-span-2 lg:col-span-1 " >research</div>
-        <div className=" bg-[#3C0753] rounded-2xl" >degine</div>
-        <div className=" bg-[#3C0753] rounded-2xl" >devlopment</div>
-       
-      </div>
+<div className="bg-blue-600 text-white p-4 text-center w-full">
+      <p className="mb-2">
+        Our website is currently under construction and will be live soon.
+      </p>
+      <p>
+        If you have any queries, please connect at  
+        <Link href="/contact">
+          <Link href='https://www.linkedin.com/in/shubhamweb/' className="underline px-1 text-white font-bold hover:text-blue-200">
+          www.linkedin.com/in/shubhamweb/
+          </Link>
+        </Link>
+        . We will get back to you as soon as possible.
+      </p>
+    </div>
 </div>
      
 
